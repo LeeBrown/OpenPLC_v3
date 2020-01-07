@@ -94,6 +94,13 @@ elif [ "$1" == "unipi" ]; then
     echo rpi > ../scripts/openplc_platform
     echo unipi > ../scripts/openplc_driver
 
+elif [ "$1" == "rpi_AH" ]; then
+    echo "Activating Raspberry Pi + Automation HAT driver"
+    cp ./hardware_layers/raspberrypi_AH.cpp ./hardware_layer.cpp
+    echo "Setting Platform"
+    echo rpi > ../scripts/openplc_platform
+    echo rpi_AH > ../scripts/openplc_driver
+
 else
     echo "Error: Invalid hardware layer"
 fi
